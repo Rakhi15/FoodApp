@@ -110,6 +110,35 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
                         <RelativeLayout
+                            android:id="@+id/muttonOrder"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@color/white">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/openclose_timing"
+                                    android:text="Orders will close within 2 days"
+                                    android:textAlignment="center"
+                                    android:textSize="16sp"
+                                    android:textColor="#E61708"
+                                    />
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="100dp"
+                                    android:src="@drawable/mutton_banner"
+                                    />
+                            </LinearLayout>
+                        </RelativeLayout>
+                        <RelativeLayout
                             android:id="@+id/mainOrderMedicine"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
