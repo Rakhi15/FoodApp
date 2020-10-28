@@ -233,6 +233,9 @@
             android:name="com.healthy.basket.activity.DeliveryOrderDetail"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.healthy.basket.activity.MuttonOrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.healthy.basket.activity.DeliveryOrderHistory"
             android:screenOrientation="portrait" />
         <activity android:name=".activity.OrderSpecification" />

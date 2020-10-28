@@ -177,6 +177,13 @@ public class MainActivity extends AppCompatActivity implements CustomButtonListe
     AdView mAdView;
     private InterstitialAd mInterstitialAd;
 
+    //oakspro
+
+    ImageView meatMutton;
+
+
+    //oakspro end
+
     private static ArrayList<menugetset> productlist;
     RecyclerView gridView;
     RecyclerView mainSearchRecyclerView;
@@ -184,7 +191,7 @@ public class MainActivity extends AppCompatActivity implements CustomButtonListe
     private int quantity;
     private ArrayList<ordergetset> orderlist;
     sqliteHelper sqliteHelper;
-    SwipeRefreshLayout refreshLayout;
+
 
     public static boolean checkInternet(Context context) {
         // TODO Auto-generated method stub
@@ -199,20 +206,14 @@ public class MainActivity extends AppCompatActivity implements CustomButtonListe
         getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         setContentView(R.layout.activity_main);
 
+        meatMutton=(ImageView)findViewById(R.id.muttonMeat);
+
         FirebaseApp.initializeApp(this);
         FirebaseInstanceId.getInstance().getInstanceId();
         Log.e("calculate", doubleToDegree(1.4320961841646465));
 
         //set ids
-        refreshLayout=findViewById(R.id.refreshLayout);
 
-
-        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                //code
-            }
-        });
 
         //gene
         // rate key hash for facebook
@@ -261,6 +262,17 @@ public class MainActivity extends AppCompatActivity implements CustomButtonListe
 //        gridView.setHasFixedSize(true);
 //        gridView.setNestedScrollingEnabled(false);
         productlist = new ArrayList<>();
+
+
+
+        meatMutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mutton_intent=new Intent(MainActivity.this, MuttonOrderActivity.class);
+                startActivity(mutton_intent);
+            }
+        });
+
 
         RelativeLayout cardView = findViewById(R.id.mainOrderMedicine);
         cardView.setOnClickListener(new View.OnClickListener() {

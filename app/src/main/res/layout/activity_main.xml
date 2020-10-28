@@ -126,15 +126,18 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/openclose_timing"
-                                    android:text="Orders will close within 2 days"
+                                    android:text="Orders will close within 2D: 22Mins : 30 Sec"
                                     android:textAlignment="center"
                                     android:textSize="16sp"
                                     android:textColor="#E61708"
                                     />
                                 <ImageView
                                     android:layout_width="match_parent"
+                                    android:scaleType="fitXY"
                                     android:layout_height="100dp"
-                                    android:src="@drawable/mutton_banner"
+                                    android:src="@drawable/frsh_meat"
+                                    android:clickable="true"
+                                    android:id="@+id/muttonMeat"
                                     />
                             </LinearLayout>
                         </RelativeLayout>
@@ -304,10 +307,7 @@
                                 </LinearLayout>
                             </RelativeLayout>
                         </RelativeLayout>
-                        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-                            android:id="@+id/refreshLayout"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+
 
                             <androidx.recyclerview.widget.RecyclerView
                                 android:id="@+id/mainGridView"
@@ -316,7 +316,7 @@
                                 android:layout_margin="10dp"
                                 android:background="@color/white"
                                 />
-                        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/listview"

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.healthy.basket.activity.MuttonOrderActivity">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/black">
+
+                <ImageView
+                    android:id="@+id/mutton_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/mix_mutton"
+                    android:layout_margin="2dp"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="centerCrop"/>
+
+               <!-- <ImageView
+                    android:id="@+id/img_DialogAddToCart_close"
+                    android:layout_width="?attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_alignParentEnd="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_close"
+                    android:tint="@color/black" />-->
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txt_AddToCart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/roboto_bold"
+                android:padding="2dp"
+                android:text="Fresh Mutton (Min: 500gm)"
+                android:textColor="@color/darkGrey"
+                android:textSize="20sp"
+                tools:ignore="SpUsage" />
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Packaging Size"
+                    android:textColor="@color/light_grey"
+                    android:textSize="16sp" />
+
+
+                <TextView
+                    android:id="@+id/txt_AddToCart_kg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/bg_border_light_fray_rounded"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:minEms="4"
+                    android:padding="2dp"
+                    android:text="1 Kg"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_AddToCart_kgMinus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/circle_lightgrey"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:text="-"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_AddToCart_kgPlus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/circle_lightgrey"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:text="+"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@string/QUANTITY"
+                    android:textColor="@color/light_grey"
+                    android:textSize="16sp" />
+
+
+                <TextView
+                    android:id="@+id/txt_AddToCart_qty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/bg_border_light_fray_rounded"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:minEms="4"
+                    android:padding="2dp"
+                    android:text="1"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_AddToCart_qtyMinus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/circle_lightgrey"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:text="-"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_AddToCart_qtyPlus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/circle_lightgrey"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:text="+"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp">
+                <TextView
+                    android:id="@+id/txt_Quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_light"
+                    android:text=""
+                    android:textColor="@color/light_grey"
+                    android:textSize="16sp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/txt_AddToCart_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="@color/light_grey"
+                    android:textSize="16sp" android:layout_weight="1"/>
+            </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_AddToCart_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="34dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="34dp"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/green"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="4"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Add"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
