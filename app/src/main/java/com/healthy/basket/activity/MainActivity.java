@@ -27,6 +27,7 @@ import android.os.Environment;
 import android.text.Editable;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.style.TypefaceSpan;
 import android.util.Base64;
@@ -180,6 +181,7 @@ public class MainActivity extends AppCompatActivity implements CustomButtonListe
     //oakspro
 
     ImageView meatMutton;
+    TextView notificationtxt;
 
 
     //oakspro end
@@ -262,6 +264,10 @@ public class MainActivity extends AppCompatActivity implements CustomButtonListe
 //        gridView.setHasFixedSize(true);
 //        gridView.setNestedScrollingEnabled(false);
         productlist = new ArrayList<>();
+
+        notificationtxt=findViewById(R.id.marqueeTxt);
+        notificationtxt.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+        notificationtxt.setSelected(true);
 
 
 
@@ -919,6 +925,9 @@ public class MainActivity extends AppCompatActivity implements CustomButtonListe
                 dialog.create().show();
             }
             return true;
+        }
+        else if (id == R.id.action_refresh){
+            startActivity(new Intent(MainActivity.this, MainActivity.class));
         }
 
         // Activate the navigation drawer toggle
