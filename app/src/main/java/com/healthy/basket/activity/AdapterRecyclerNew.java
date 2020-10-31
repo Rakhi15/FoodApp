@@ -104,6 +104,9 @@ public class AdapterRecyclerNew extends RecyclerView.Adapter<AdapterRecyclerNew.
                     CardView finalcart=(CardView)dialogView.findViewById(R.id.card_DialogAddToCart_add);
 
 
+                    title.setText(titles.get(getAdapterPosition()));
+                    Picasso.with(context).load("https://healthybaskets.co/uploads/restaurant/"+images.get(getAdapterPosition())).into(pimage);
+
 
                    closeEd.setOnClickListener(new View.OnClickListener() {
                        @Override
