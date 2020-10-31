@@ -41,7 +41,7 @@ public class MuttonOrderActivity extends AppCompatActivity {
     List<String> mrp;
     List<String> price;
     List<String> images;
-    String api_getP="https://healthybaskets.co/api/restaurant_submenu.php";
+    String api_getP="https://healthybaskets.co/api/getScheduledItems.php?res_id=7";
 
     AdapterRecyclerNew adapter;
     ProgressDialog progressDialog;
@@ -129,15 +129,15 @@ public class MuttonOrderActivity extends AppCompatActivity {
     private void letsShakeRey() {
         progressDialog.show();
 
-        StringRequest request=new StringRequest(Request.Method.POST, api_getP, new Response.Listener<String>() {
+        StringRequest request=new StringRequest(Request.Method.GET, api_getP, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONObject jsonObject=new JSONObject(response);
-                    String success=jsonObject.getString("Success");
+                    String success=jsonObject.getString("status");
                     JSONArray jsonArray=jsonObject.getJSONArray("Menu_List");
 
-                    if (success.equals("1")){
+                    if (success.equals("Success")){
                         for (int i=0; i<jsonArray.length(); i++){
                             JSONObject object=jsonArray.getJSONObject(i);
 
@@ -183,8 +183,8 @@ public class MuttonOrderActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params=new HashMap<String, String>();
-                String id_s="44";
-                params.put("menucategory_id", id_s);
+                String id_s="7";
+                params.put("res_id", id_s);
 
                 return params;
             }

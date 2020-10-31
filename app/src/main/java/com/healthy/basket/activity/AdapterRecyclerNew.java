@@ -1,14 +1,17 @@
 package com.healthy.basket.activity;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.healthy.basket.R;
@@ -65,6 +68,7 @@ public class AdapterRecyclerNew extends RecyclerView.Adapter<AdapterRecyclerNew.
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView title, quantity, mrp, price;
         ImageView gridIcon;
+        Button addcartbtn;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -74,7 +78,64 @@ public class AdapterRecyclerNew extends RecyclerView.Adapter<AdapterRecyclerNew.
             quantity=itemView.findViewById(R.id.qnt_txt);
             mrp=itemView.findViewById(R.id.mrp_text);
             price=itemView.findViewById(R.id.price_new);
+            addcartbtn=itemView.findViewById(R.id.addcartBtn);
 
+            TextView minux, plus;
+
+            addcartbtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+
+                    ViewGroup viewGroup =v.findViewById(android.R.id.content);
+                    View dialogView = LayoutInflater.from(context).inflate(R.layout.custom_dialog_new, viewGroup, false);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    builder.setView(dialogView);
+                    final AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
+
+                    TextView title=(TextView)dialogView.findViewById(R.id.txt_DialogAddToCart);
+                    TextView quantity=(TextView)dialogView.findViewById(R.id.txt_DialogQuantity);
+                    TextView amount=(TextView)dialogView.findViewById(R.id.txt_DialogAddToCart_amount) ;
+                    ImageView pimage=(ImageView)dialogView.findViewById(R.id.img_DialogAddToCart) ;
+                    ImageView closeEd=(ImageView)dialogView.findViewById(R.id.img_DialogAddToCart_close);
+                    TextView minux=(TextView)dialogView.findViewById(R.id.txt_DialogAddToCart_qtyMinus);
+                    TextView plus=(TextView) dialogView.findViewById(R.id.txt_DialogAddToCart_qtyPlus);
+                    CardView finalcart=(CardView)dialogView.findViewById(R.id.card_DialogAddToCart_add);
+
+
+
+                   closeEd.setOnClickListener(new View.OnClickListener() {
+                       @Override
+                       public void onClick(View v) {
+                           alertDialog.dismiss();
+                       }
+                   });
+
+
+                    minux.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Toast.makeText(context, "Test", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                    plus.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Toast.makeText(context, "Test", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                    finalcart.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            //
+                        }
+                    });
+
+                }
+            });
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -84,4 +145,6 @@ public class AdapterRecyclerNew extends RecyclerView.Adapter<AdapterRecyclerNew.
             });
         }
     }
+
+
 }
