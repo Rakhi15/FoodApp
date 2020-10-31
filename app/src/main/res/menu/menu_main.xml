@@ -8,7 +8,7 @@
         android:title=""
         android:orderInCategory="100"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_baseline_settings_backup_restore_24"
+        android:icon="@drawable/ic_shopping_cart_white_24dp"
         />
     <item android:id="@+id/action_setting"
         android:title=""
